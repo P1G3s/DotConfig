@@ -1,0 +1,66 @@
+#!/bin/bash
+
+#this script is used to change source with no brain used
+#and requires super user previledge to execute the script. 
+#Since it involves some operations under the root directory, you
+#might need to execute sudo visudo and add the path which this script 
+#is located then use this script
+
+#variables might wanna change
+path=~/Documents/Backup/sources/
+des=/etc/apt/
+
+
+#functions
+arrPrint(){
+	for (( i=0; i<${#arr[@]}; i=i+1 )); do 
+		echo -e "\e[32m${i}\e[0m -> "${arr[$i]}" -> \e[31mp"${i}"\e[0m"
+	done
+	echo -e "Type \e[31mthe index of the source\e[0m to proceed source changing"
+	echo -e "Type \e[31mp followed by the index of the source\e[0m to PREVIEW source"
+	echo " "
+}
+
+
+#initalize arr
+declare -a arr
+files=$(echo $(ls $path))
+read -a arr <<< $files
+arrPrint
+
+
+#proceed cp and update(optional) and preview(optional)
+read -p "Which action do you prefer Sir?  " fileNum 
+while [[ $fileNum =~ ^p([0-9]+)$ ]]; do
+	preNum=$(echo ${fileNum} | cut -c2-)
+	echo " "
+	less ${path}${arr[$preNum]} 
+	read -p "Which action do you prefer Sir?  " fileNum 
+done
+
+
+#proceed changing src
+if [[ $fileNum =~ ^[0-${#arr[@]}]+$ ]]; then
+	echo -e "Source \e[31m${arr[$fileNum]}\e[0m will be copied to /etc/apt"	
+	echo -e "\e[32mConfirm? (Y/n)\e[0m"
+	read flag
+	if [[ flag==Y ]]; then
+		$(cp ${path}${arr[$fileNum]} ${des}sources.list && echo "complete")
+		echo -e "\e[32mWould you like to perform an update now? (Y/n)\e[0m" 
+		
+#update or not
+		read ifUpdate 
+		if [[ ifUpdate==Y ]]; then
+			apt-get update
+		else 
+			echo "No update performed"
+		fi
+
+	else 
+		echo "Canceled"
+	fi	
+else
+	echo "Err: Not a (legal) number"
+fi
+
+exit 0

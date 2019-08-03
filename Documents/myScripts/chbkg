@@ -1,0 +1,25 @@
+#! /bin/bash
+
+#variables you might wanna change 
+confFile=~/.config/i3/config
+code='feh --bg-scale '
+code1='exec_always --no-startup-id "feh --bg-scale '
+
+#get Params
+if [[ $1 =~ (.jpg|.png)$ ]]; then
+	picPath=$1
+
+	#change background now
+	$(${code}${picPath})
+
+	#delete the last line of config
+	sed -i '$d' ${confFile}
+
+	#append a line to the config 
+	echo ${code1}${picPath}'"' >> $confFile
+	exit 0
+else
+	echo "Err: not a picture format"
+fi
+
+exit 0

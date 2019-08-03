@@ -1,0 +1,12 @@
+INFO  2019-07-18T20:42:56.338 3462  main:565: starting main loop
+INFO  2019-07-18T20:43:04.875 3462  mch_exit:99: Nvim exit: 0
+INFO  2019-07-18T20:43:06.564 3484  main:565: starting main loop
+INFO  2019-07-18T20:48:15.651 3484  mch_exit:99: Nvim exit: 0
+INFO  2019-07-19T20:20:34.506 8182  main:565: starting main loop
+INFO  2019-07-19T20:20:36.912 8182  mch_exit:99: Nvim exit: 0
+INFO  2019-07-19T20:20:37.995 8197  main:565: starting main loop
+INFO  2019-07-19T20:20:42.100 8197  mch_exit:99: Nvim exit: 0
+INFO  2019-07-19T20:20:46.014 8210  main:565: starting main loop
+INFO  2019-07-19T20:21:24.822 8210  mch_exit:99: Nvim exit: 0
+INFO  2019-07-19T20:45:08.713 16032 main:565: starting main loop
+INFO  2019-07-19T21:23:28.007 16032 mch_exit:99: Nvim exit: 0

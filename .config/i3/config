@@ -1,0 +1,180 @@
+	
+#-----		DUMP		-----#
+# Run polybar
+# exec_always --no-startup-id ~/.config/i3/polybar.sh &
+# Run ranger
+# bindsym $mod+r exec alacriatty --command ranger
+
+
+
+
+set $mod Mod4
+
+
+
+
+#-----		Basic Manipulation		-----#
+bindsym $mod+h focus left				
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left 30			
+bindsym $mod+Shift+j move down 30
+bindsym $mod+Shift+k move up 30
+bindsym $mod+Shift+l move right 30
+
+bindsym $mod+shift+s resize shrink width 5 px or 5 ppt
+bindsym $mod+shift+b resize grow width 5 px or 5 ppt
+bindsym $mod+shift+u resize grow height 5 px or 5 ppt
+bindsym $mod+shift+d resize shrink height 5 px or 5 ppt
+
+bindsym $mod+c split h			
+bindsym $mod+v split v		
+
+bindsym $mod+f fullscreen toggle	
+bindsym $mod+Shift+space floating toggle	
+
+bindsym $mod+space focus mode_toggle	
+
+bindsym $mod+Shift+c reload				
+bindsym $mod+Shift+r restart			
+
+bindsym $mod+Shift+q kill 				
+bindsym $mod+Return exec --no-startup-id "st"				
+# bindsym $mod+d exec "dmenu_run"				
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"				
+
+
+
+
+#-----		WorkSpace		-----#
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+bindsym $mod+1		workspace $ws1			
+bindsym $mod+2		workspace $ws2
+bindsym $mod+3		workspace $ws3
+bindsym $mod+4		workspace $ws4
+bindsym $mod+5		workspace $ws5
+bindsym $mod+6		workspace $ws6
+bindsym $mod+7		workspace $ws7
+bindsym $mod+8		workspace $ws8
+bindsym $mod+9		workspace $ws9
+bindsym $mod+0		workspace $ws10
+bindsym $mod+Shift+1	move container to workspace $ws1	
+bindsym $mod+Shift+2	move container to workspace $ws2
+bindsym $mod+Shift+3	move container to workspace $ws3
+bindsym $mod+Shift+4	move container to workspace $ws4
+bindsym $mod+Shift+5	move container to workspace $ws5
+bindsym $mod+Shift+6	move container to workspace $ws6
+bindsym $mod+Shift+7	move container to workspace $ws7
+bindsym $mod+Shift+8	move container to workspace $ws8
+bindsym $mod+Shift+9	move container to workspace $ws9
+bindsym $mod+Shift+0	move container to workspace $ws1
+
+
+
+
+#-----		Bar Config		-----#
+#bar {
+#	i3bar_command i3bar -t
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	i3bar_command 
+#	position top
+#	height 25
+#	font pango:SNFS Display 100, Font Awesome 5 Free Solid
+#	separator_symbol " "
+#	colors {
+#		background #00000000
+#		statusline #ADB4BA
+#		separator #97683E
+#
+#		focused_workspace  #97683E   #417175   #ffffff
+#	        active_workspace   #00000000 #00000000 #ffffff
+#        	inactive_workspace #00000000 #00000000 #888888
+#      		urgent_workspace   #00000000 #00000000 #900000
+#        	binding_mode       #00000000 #00000000 #900000
+#	}
+#}
+	
+
+
+
+#-----		i3-Gaps			-----#
+# Gaps between window
+set $innerGap 20
+set $outerGap 20
+set $topGap 35
+set $bottomGap 15
+for_window [class="^.*"] border pixel 0
+gaps inner $innerGap
+# gaps outer $outerGap
+gaps top $topGap
+gaps bottom $bottomGap
+hide_edge_borders both		
+# Gaps manipulation
+# bindsym $mod+plus  gaps inner all plus 5
+# bindsym $mod+minus gaps inner all minus 5
+bindsym $mod+plus resize grow width 15px;resize grow height 15px;
+bindsym $mod+minus resize shrink width 15px;resize shrink height 15px;
+
+
+
+#-----		Window Colors		-----#
+#class                 	border  backgr. text    indicator 
+
+client.focused          #C98929 #EDAD4D #FF0000 #C98929
+client.focused_inactive #FF0000 #5f676a #ffffff #484e50
+client.unfocused        #333333 #6D6963 #888888 #292d2e 
+client.urgent           #2f343a #900000 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+
+
+#----- 		QR_Program keys		-----#
+# Drop down terminal 
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] scratchpad show; move position 20px 60px;move scratchpad
+bindsym $mod+backslash [instance="dropdown"] scratchpad show
+bindsym $mod+t exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24'"
+bindsym $mod+b exec --no-startup-id "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"		
+bindsym $mod+g exec --no-startup-id "chromium-browser"
+bindsym $mod+d exec --no-startup-id "rofi -show run -theme darkBox -display-run 'run: '"
+bindsym $mod+p exec --no-startup-id "gnome-screenshot"
+
+#-----		 Fn key control		-----#
+# Control volume or toggle mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks" 		
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioMute exec --no-startup-id "amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks"
+# Control brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5" 									
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5" 									
+# Media player controls
+bindsym XF86AudioPlay exec "playerctl play"	
+bindsym XF86AudioPause exec "playerctl pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
+
+#-----		Startup Program		-----#
+exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24'"
+exec --no-startup-id "~/Apps/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
+exec_always --no-startup-id "fcitx" 
+exec --no-startup-id "compton"
+exec_always --no-startup-id "~/.config/polybar/polybar.sh"
+#exec_always --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
+
+
+
+
+#This line has to be the last line for the script changes background in ranger
+exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/StarWars/nikita-pilyukshin-pilot-helmet-final.jpg"
