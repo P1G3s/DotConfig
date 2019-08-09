@@ -75,7 +75,8 @@ cursor-scroll = ns-resize
 [module/customDisplay]
 type = custom/text
 ;content = Welcome P1G3s 
-content = "%{F#DF2F3D}Pi%{F#D4913D}X%{F#DFC32F}el %{F#E5E6E0} %{F#41B2EB}Ti%{F#D261D7}me  "
+;content = "%{F#DF2F3D}Pi%{F#D4913D}X%{F#DFC32F}el %{F#E5E6E0} %{F#41B2EB}Ti%{F#D261D7}me  "
+content =""
 
 [module/xwindow]
 type = internal/xwindow

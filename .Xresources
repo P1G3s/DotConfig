@@ -1,7 +1,7 @@
-!URxvt.font: xft:monaco:bold:size=13
-!URxvt.font: 9x15bold
-!URxvt.background: black 
-!URxvt.scrollBar: false 
+!.font: xft:monaco:bold:size=13
+!.font: 9x15bold
+!.background: black 
+!.scrollBar: false 
 !*.font:Tamzen:Bold:pixelsize=24;
 !*.font:	Liberation Mono:pixelsize=12:antialias=true:autohint=true;
 !*.font:Lode Sans:antialias=true:autohint=true:pixelsize=10;
@@ -9,4 +9,5 @@
 st.alpha:0.9
 st.font:Tamzen:Bold:pixelsize=24
 st.font2:Zpix:pixelsize=18
+
 

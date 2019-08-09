@@ -145,29 +145,30 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] scratchpad show; move position 20px 60px;move scratchpad
 bindsym $mod+backslash [instance="dropdown"] scratchpad show
-bindsym $mod+t exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24'"
+exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24' -e tmux"
+
+bindsym $mod+t exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24' -e tmux"
 bindsym $mod+b exec --no-startup-id "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"		
 bindsym $mod+g exec --no-startup-id "chromium-browser"
 bindsym $mod+d exec --no-startup-id "rofi -show run -theme darkBox -display-run 'run: '"
 bindsym $mod+p exec --no-startup-id "gnome-screenshot"
 
 #-----		 Fn key control		-----#
-# Control volume or toggle mute
+# Volume control or mute toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks" 		
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks"
-# Control brightness
+# Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5" 									
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5" 									
-# Media player controls
+# Media player control
 bindsym XF86AudioPlay exec "playerctl play"	
 bindsym XF86AudioPause exec "playerctl pause"
 bindsym XF86AudioNext exec "playerctl next"
 bindsym XF86AudioPrev exec "playerctl previous"
 
 #-----		Startup Program		-----#
-exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24'"
-exec --no-startup-id "~/Apps/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
+exec --no-startup-id "~/Apps/SSR/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
 exec_always --no-startup-id "fcitx" 
 exec --no-startup-id "compton"
 exec_always --no-startup-id "~/.config/polybar/polybar.sh"
@@ -177,4 +178,4 @@ exec_always --no-startup-id "~/.config/polybar/polybar.sh"
 
 
 #This line has to be the last line for the script changes background in ranger
-exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/StarWars/nikita-pilyukshin-pilot-helmet-final.jpg"
+exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/Landscape/wallhaven-698778_1920x1080.png"

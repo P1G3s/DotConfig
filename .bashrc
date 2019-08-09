@@ -130,11 +130,12 @@ export LANG=en_US.UTF-8
 # custom alias
 alias gh='cd ~'
 alias gd='cd ~/Downloads'
-alias cl='clear'
+alias c='clear'
 alias ex='exit'
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ga='cd ~/Apps'
 alias gw='cd ~/Workspace'
 alias jj='cd ..'
+alias ca='gcalccmd'
 
 source Documents/.google
