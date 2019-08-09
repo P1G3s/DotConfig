@@ -19,7 +19,4 @@
 - **And More...**
 
 
-## Scripts
-  I try writing some very basic scripts with my limited shell knowledge, just for convenience :P
-- **chsrc**                    :helps me change the apt source file when i'm not experiencing hyperspeed downloading
-- **chbkg**                    :helps me change wallpaper more easily, i have it bound to the key "bg" in ranger so that i can change wallpaper right in the ranger (just simply type bg with the selected image in ranger)
+
