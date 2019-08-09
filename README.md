@@ -5,7 +5,7 @@
  
 #### Overview:
 
-![alt text](./Documents/ScreenShot.png)
+![](./Documents/ScreenShot.png)
 
 
 ## Main Components
