@@ -7,7 +7,7 @@
 
 
 
-
+# font pango:SNFS Display 100, Font Awesome 5 Free Solid
 set $mod Mod4
 
 
@@ -113,7 +113,7 @@ bindsym $mod+Shift+0	move container to workspace $ws1
 set $innerGap 20
 set $outerGap 20
 set $topGap 35
-set $bottomGap 15
+set $bottomGap 10
 for_window [class="^.*"] border pixel 0
 gaps inner $innerGap
 # gaps outer $outerGap
@@ -178,4 +178,4 @@ exec_always --no-startup-id "~/.config/polybar/polybar.sh"
 
 
 #This line has to be the last line for the script changes background in ranger
-exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/Landscape/wallhaven-698778_1920x1080.png"
+exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/Landscape/wallhaven-673717_1920x1080.png"

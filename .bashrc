@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+PS1="\[\e[31m\][\[\e[m\]\[\e[33m\]\u\[\e[m\]\[\e[34m\]:\[\e[m\]\[\e[32m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
 
 # custom
 set -o vi
@@ -137,5 +137,6 @@ alias ga='cd ~/Apps'
 alias gw='cd ~/Workspace'
 alias jj='cd ..'
 alias ca='gcalccmd'
+alias pan='sudo ~/Apps/BaiduPCS-Go-v3.5.6-linux-amd64/BaiduPCS-Go'
 
 source Documents/.google

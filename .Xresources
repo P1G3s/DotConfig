@@ -8,6 +8,45 @@
 !*.facesize: 40
 st.alpha:0.9
 st.font:Tamzen:Bold:pixelsize=24
-st.font2:Zpix:pixelsize=18
+st.font1:Zpix:pixelsize=18
+st.font2:siji:pixelsize=15
 
+
+
+! special
+*.foreground:   #a6a28c
+*.background:   #252525
+*.cursorColor:  #a6a28c
+
+! black
+*.color0:       #20201d
+*.color8:       #7d7a68
+
+! red
+*.color1:       #d73737
+*.color9:       #d73737
+
+! green
+*.color2:       #60ac39
+*.color10:      #60ac39
+
+! yellow
+*.color3:       #cfb017
+*.color11:      #cfb017
+
+! blue
+*.color4:       #537ca1
+*.color12:      #59749d
+
+! magenta
+*.color5:       #b854d4
+*.color13:      #b854d4
+
+! cyan
+*.color6:       #1fad83
+*.color14:      #1fad83
+
+! white
+*.color7:       #a6a28c
+*.color15:      #fefbec
 
