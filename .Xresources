@@ -8,8 +8,10 @@
 !*.facesize: 40
 st.alpha:0.9
 st.font:Tamzen:Bold:pixelsize=24
-st.font1:Zpix:pixelsize=18
+st.font1:Zpix:pixelsize=16
 st.font2:siji:pixelsize=15
+st.borderpx:6
+st.cursor:4
 
 
 

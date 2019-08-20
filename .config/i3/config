@@ -172,10 +172,5 @@ exec --no-startup-id "~/Apps/SSR/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
 exec_always --no-startup-id "fcitx" 
 exec --no-startup-id "compton"
 exec_always --no-startup-id "~/.config/polybar/polybar.sh"
+exec_always --no-startup-id "feh --bg-scale ~/.config/i3/wallPaper.jpg"
 #exec_always --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
-
-
-
-
-#This line has to be the last line for the script changes background in ranger
-exec_always --no-startup-id "feh --bg-scale /home/P1G3s/Pictures/Wallpaper/Landscape/wallhaven-673717_1920x1080.png"

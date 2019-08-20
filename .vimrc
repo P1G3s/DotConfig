@@ -29,6 +29,7 @@ filetype plugin indent on
 set mouse=a
 syntax on
 set relativenumber
+set nu
 set wrap
 set showcmd
 set wildmenu
@@ -40,23 +41,6 @@ set scrolloff=6
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 exec "nohlsearch"
 
-"ncm2
-set completeopt=noinsert,menuone,noselect
-autocmd BufEnter * call ncm2#enable_for_buffer()
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-"markdownPreview
-nmap <C-p> <Plug>MarkdownPreview
-let g:mkdp_browser = 'chromium-browser'
-
-"airline
-let g:airline_theme='term'
-"let g:airline#extensions#tabline#enabled = 1
-
 
 
 
@@ -66,6 +50,24 @@ let g:airline_theme='term'
 let g:SnazzyTransparent = 1
 map  sf <Plug>(easymotion-bd-f)
 colorscheme snazzy
+
+"--ncm2
+set completeopt=noinsert,menuone,noselect
+autocmd BufEnter * call ncm2#enable_for_buffer()
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"--markdownPreview
+nmap <C-p> <Plug>MarkdownPreview
+let g:mkdp_browser = 'chromium-browser'
+
+"--airline
+let g:airline_theme='term'
+"let g:airline#extensions#tabline#enabled = 1
+
 
 
 
@@ -91,7 +93,7 @@ map R :source $MYVIMRC<CR>
 map st :NERDTreeToggle<CR>
 map sn :+tabnext<CR>
 map sp :-tabnext<CR>
-map sc <C-h>i----<Tab><Tab><Esc><C-l>a<Tab><Tab>-----<Esc><C-h>i
+"map sc <C-h>i----<Tab><Tab><Esc><C-l>a<Tab><Tab>-----<Esc><C-h>i
 map s" Ea"<Esc>Bi"<Esc>
 map s( Ea)<Esc>Bi(<Esc>
 map s[ Ea]<Esc>Bi[<Esc>
@@ -117,6 +119,10 @@ noremap L 5l
 noremap <C-l> $
 noremap <C-h> 0
 
-"markDown
-imap ,b **** <++><Esc>bblli
+"--markDown
+autocmd FileType markdown inoremap ;b **** <++><Esc>bblli
+
+"--C
+autocmd FileType c nmap ;c {o<C-h>/*<Esc>}O<C-h>*/<Esc>
+autocmd FileType c nmap ;C {jdd}kdd 
 

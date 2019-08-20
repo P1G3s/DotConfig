@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #881E2124
+background = #95000000
 background-alt = #00444444
 foreground = #dfdfdf
 foreground-alt = #85555555
@@ -145,7 +145,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = >%index%<
-label-focused-background = #851E2124
+label-focused-background = ${colors.background}
 ; label-focused-underline= ${colors.icon}
 label-focused-underline = #00B4B7A9
 label-focused-padding = 2
