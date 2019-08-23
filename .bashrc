@@ -138,5 +138,7 @@ alias gw='cd ~/Workspace'
 alias jj='cd ..'
 alias ca='gcalccmd'
 alias pan='sudo ~/Apps/BaiduPCS-Go-v3.5.6-linux-amd64/BaiduPCS-Go'
+alias zt='sudo zerotier-cli'
+alias gac='git add . && git commit -m "update"'
 
 source Documents/.google

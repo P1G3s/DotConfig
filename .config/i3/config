@@ -168,8 +168,8 @@ bindsym XF86AudioNext exec "playerctl next"
 bindsym XF86AudioPrev exec "playerctl previous"
 
 #-----		Startup Program		-----#
-exec --no-startup-id "~/Apps/SSR/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
-exec_always --no-startup-id "fcitx" 
+# exec --no-startup-id "~/Apps/SSR/Shadowsocks-Qt5-3.0.1-x86_64.AppImage"
+# exec_always --no-startup-id "fcitx" 
 exec --no-startup-id "compton"
 exec_always --no-startup-id "~/.config/polybar/polybar.sh"
 exec_always --no-startup-id "feh --bg-scale ~/.config/i3/wallPaper.jpg"
