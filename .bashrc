@@ -123,22 +123,39 @@ set -o vi
 VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+export WorkSpace='/home/P1G3s/WorkSpace/MFS/mfs'
+source Documents/.google
+export SSRDIR='/home/P1G3s/Apps/Misc/ssr/shadowsocksr/shadowsocks'
+export LFS='/mnt/lfs'
 
 
 
 
 # custom alias
 alias gh='cd ~'
+alias gv='cd ~/Videos'
 alias gd='cd ~/Downloads'
+alias gw='cd $WorkSpace'
+alias gy='cd ~/Videos/1-考研'
+alias gt='cd /home/P1G3s/WorkSpace/MFS/mfs/mnt1/home/P1G3s/Downloads/TEST'
 alias c='clear'
 alias ex='exit'
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ga='cd ~/Apps'
-alias gw='cd ~/Workspace'
+alias gw='cd $WorkSpace'
 alias jj='cd ..'
 alias ca='gcalccmd'
 alias pan='sudo ~/Apps/BaiduPCS-Go-v3.5.6-linux-amd64/BaiduPCS-Go'
+alias vim='nvim'
 alias zt='sudo zerotier-cli'
 alias gac='git add . && git commit -m "update"'
-
-source Documents/.google
+alias gitpush='git push -u origin master'
+# alias ssr='sudo python $SSRDIR/local.py -c $SSRDIR/ssr.json -d start'
+# alias ssrkill='sudo python $SSRDIR/local.py -c $SSRDIR/ssr.json -d stop'
+alias ssredit='vim $SSRDIR/ssr.json'
+alias sshpro='ssh 127.0.1.1 -p 2222'
+alias makemfs='killall mfs; make'
+alias v2ray='/home/P1G3s/Downloads/Qv2ray.v2.6.3.linux-x64.AppImage --appimage-extract-and-run &'
+alias proxyset='export http_proxy="127.0.0.1:8889" && export https_proxy="127.0.0.1:8889" && export ftp_proxy="127.0.0.1:8889"'
+alias lfsmnt='sudo mount /dev/sda6 /mnt'
+alias dmesg='dmesg -wH'

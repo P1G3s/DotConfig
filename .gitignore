@@ -13,6 +13,7 @@
 !Documents/
 .config/*
 Documents/*
+Videos/*
 
 
 !.config/i3/
@@ -23,4 +24,3 @@ Documents/*
 !Documents/Bakcup
 !Documents/myScripts
 !Documents/ScreenShot.png
-Documents/SSR

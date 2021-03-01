@@ -113,7 +113,7 @@ bindsym $mod+Shift+0	move container to workspace $ws1
 set $innerGap 20
 set $outerGap 20
 set $topGap 35
-set $bottomGap 10
+set $bottomGap 5
 for_window [class="^.*"] border pixel 0
 gaps inner $innerGap
 # gaps outer $outerGap
@@ -149,7 +149,7 @@ exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24' -e tmux"
 
 bindsym $mod+t exec --no-startup-id "st -n dropdown -f 'Tamzen:Bold:pixelsize=24' -e tmux"
 bindsym $mod+b exec --no-startup-id "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"		
-bindsym $mod+g exec --no-startup-id "chromium-browser"
+bindsym $mod+g exec --no-startup-id "google-chrome"
 bindsym $mod+d exec --no-startup-id "rofi -show run -theme darkBox -display-run 'run: '"
 bindsym $mod+p exec --no-startup-id "gnome-screenshot"
 
@@ -172,5 +172,6 @@ bindsym XF86AudioPrev exec "playerctl previous"
 # exec_always --no-startup-id "fcitx" 
 exec --no-startup-id "compton"
 exec_always --no-startup-id "~/.config/polybar/polybar.sh"
-exec_always --no-startup-id "feh --bg-scale ~/.config/i3/wallPaper.jpg"
-#exec_always --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
+exec_always --no-startup-id "feh --bg-center ~/.config/i3/wallPaper.jpg"
+exec_always --no-startup-id "xinput set-float-prop 'Lenovo Lenovo 500 Wireless Mouse' 'libinput Accel Speed' -0.5"
+exec_always --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"

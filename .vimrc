@@ -13,6 +13,7 @@ Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'w0rp/ale'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 
@@ -49,7 +50,7 @@ exec "nohlsearch"
 "----		Settings(Plugins)		-----
 let g:SnazzyTransparent = 1
 map  sf <Plug>(easymotion-bd-f)
-colorscheme snazzy
+colorscheme gruvbox
 
 "--ncm2
 set completeopt=noinsert,menuone,noselect
@@ -62,11 +63,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "--markdownPreview
 nmap <C-p> <Plug>MarkdownPreview
-let g:mkdp_browser = 'chromium-browser'
+let g:mkdp_browser='chromium-browser'
 
 "--airline
 let g:airline_theme='term'
-"let g:airline#extensions#tabline#enabled = 1
 
 
 
@@ -103,13 +103,14 @@ map sk <C-w>k
 map sj <C-w>j
 map sh <C-w>h
 
-"map <up> :res +5<CR>
-"map <down> :res -5<CR>
-"map <left> :vertical resize-5<CR>
-"map <right> :vertical resize+5<CR>
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
 
-noremap <left> gT
-noremap <right> gt
+
+"noremap <left> gT
+"noremap <right> gt
 
 noremap K 5k
 noremap J 5j
@@ -119,10 +120,15 @@ noremap L 5l
 noremap <C-l> $
 noremap <C-h> 0
 
+
 "--markDown
 autocmd FileType markdown inoremap ;b **** <++><Esc>bblli
 
 "--C
 autocmd FileType c nmap ;c {o<C-h>/*<Esc>}O<C-h>*/<Esc>
-autocmd FileType c nmap ;C {jdd}kdd 
+autocmd FileType c nmap ;C {jdd}kdd
 
+"--temp
+map sc :%s/\\u0026/\&/g<CR>
+map sy "+y
+vnoremap s/ y/\V<C-R>=escape(@",'/\')<CR><CR>

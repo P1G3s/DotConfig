@@ -26,8 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+
+
 # Nodejs
 VERSION=v10.16.0
 DISTRO=linux-x64
-export PATH="$HOME/.local/.bin:$HOME/Documents/myScripts:/usr/local/go/bin:$PATH:$HOME/Apps/nodejs/bin:$HOME/Apps/jre/jre1.8.0_221/bin"
-
+export PATH="$HOME/.local/.bin:$HOME/Documents/myScripts:/usr/local/go/bin:$PATH:$HOME/Apps/CS/nodejs/bin:$HOME/Apps/CS/jre/jre1.8.0_221/bin"
+source ~/Documents/.google

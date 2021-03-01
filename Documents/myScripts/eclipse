@@ -1,0 +1,4 @@
+#!/bin/bash
+
+$(~/Apps/CS/eclipse/eclipse &)
+exit 0
