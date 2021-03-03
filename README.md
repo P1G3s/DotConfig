@@ -1,11 +1,4 @@
-## What are these?
-
-  Greetings sir, these are some of the **Dot Files** on my linux OS, and they are basically the backup in case i borke the system or hop to another distro. Since i have not yet accuired much knowledge of linux, **i can't promise that these files are in good quality**, but if you are interested, please feel free to try it and post any problems you might have encountered so that i can make things better. Here are some screenshots of my ricing
-    
- 
-
 ## Overview:
->>>>>>> 4ac8ba543c1dadb573262990ee58b6f28a826635
 
 ![](./Documents/ScreenShot.png)
 
